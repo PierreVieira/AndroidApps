@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Colegio</string>
+    <string name="strN1">Nota 1</string>
+    <string name="strN2">Nota 2</string>
+    <string name="strCalc">Calcular</string>
+    <string name="strMedia">Promedio</string>
+    <string name="strStatus">Situación</string>
+    <string name="strAproved">Aprobado</string>
+    <string name="strRec">Recuperación</string>
+    <string name="strRip">Desaprobado</string>
+    <string name="strMsgAp">Felicidaddes!</string>
+    <string name="strMsgRc">Estudia más. Es posible</string>
+    <string name="strMsgRp">Vuelve a intentarlo el año que viene</string>
+</resources>
