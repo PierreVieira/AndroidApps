@@ -43,5 +43,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_green_dark"
         android:text="@string/strCalc"
+        android:onClick="calcular"
         android:textColor="@android:color/white" />
 </LinearLayout>
