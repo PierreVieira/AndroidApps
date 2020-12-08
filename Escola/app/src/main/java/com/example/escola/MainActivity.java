@@ -1,14 +1,15 @@
+
 package com.example.escola;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtN1, edtN2;
@@ -35,12 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
     private String encontrarSituacao(float media) {
         if (media < 4) {
+            Toast.makeText(getApplicationContext(), getString(R.string.strMsgRp), Toast.LENGTH_LONG).show();
             txtSit.setTextColor(ContextCompat.getColor(this, R.color.corReprovado));
             return getString(R.string.strRip);
         } else if (media < 6) {
+            Toast.makeText(getApplicationContext(), getString(R.string.strMsgRc), Toast.LENGTH_LONG).show();
             txtSit.setTextColor(ContextCompat.getColor(this, R.color.corRecuperacao));
             return getString(R.string.strRec);
         }
+        Toast.makeText(getApplicationContext(), getString(R.string.strMsgAp), Toast.LENGTH_LONG).show();
         txtSit.setTextColor(ContextCompat.getColor(this, R.color.corAprovado));
         return getString(R.string.strAproved);
     }
