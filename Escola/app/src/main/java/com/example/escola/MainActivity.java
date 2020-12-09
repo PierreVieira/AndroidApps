@@ -1,9 +1,12 @@
 
 package com.example.escola;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     EditText edtN1, edtN2;
     TextView txtM, txtSit;
     LinearLayout layResult;
+    ImageView imgSit;
+    InputMethodManager inputMethodManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         txtM = findViewById(R.id.txtM);
         txtSit = findViewById(R.id.txtSit);
         layResult = findViewById(R.id.layResult);
+        imgSit = findViewById(R.id.imgSit);
+        layResult.setVisibility(View.GONE);
+        inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     private float calcularMedia() {
@@ -38,13 +46,16 @@ public class MainActivity extends AppCompatActivity {
         if (media < 4) {
             Toast.makeText(getApplicationContext(), getString(R.string.strMsgRp), Toast.LENGTH_LONG).show();
             txtSit.setTextColor(ContextCompat.getColor(this, R.color.corReprovado));
+            imgSit.setImageResource(R.drawable.emojireprovado);
             return getString(R.string.strRip);
         } else if (media < 6) {
             Toast.makeText(getApplicationContext(), getString(R.string.strMsgRc), Toast.LENGTH_LONG).show();
             txtSit.setTextColor(ContextCompat.getColor(this, R.color.corRecuperacao));
+            imgSit.setImageResource(R.drawable.emojirecuperacao);
             return getString(R.string.strRec);
         }
         Toast.makeText(getApplicationContext(), getString(R.string.strMsgAp), Toast.LENGTH_LONG).show();
+        imgSit.setImageResource(R.drawable.emojiaprovado);
         txtSit.setTextColor(ContextCompat.getColor(this, R.color.corAprovado));
         return getString(R.string.strAproved);
     }
@@ -67,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcular(View view) {
         if (tudoOk()) {
+            inputMethodManager.hideSoftInputFromWindow(edtN1.getWindowToken(), 0);
+            layResult.setVisibility(View.VISIBLE);
             float media = calcularMedia();
             String situacao = encontrarSituacao(media);
             alterarCampos(media, situacao);

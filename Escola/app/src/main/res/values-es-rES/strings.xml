@@ -13,4 +13,5 @@
     <string name="strMsgRc">Estudia más. Es posible</string>
     <string name="strMsgRp">Vuelve a intentarlo el año que viene</string>
     <string name="msgErro">Ingrese un numero!</string>
+    <string name="situation">Situación</string>
 </resources>
