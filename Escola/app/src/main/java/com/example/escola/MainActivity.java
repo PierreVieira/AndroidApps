@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         layResult = findViewById(R.id.layResult);
         imgSit = findViewById(R.id.imgSit);
         layResult.setVisibility(View.GONE);
+        imgSit.setVisibility(View.GONE);
         inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if (tudoOk()) {
             inputMethodManager.hideSoftInputFromWindow(edtN1.getWindowToken(), 0);
             layResult.setVisibility(View.VISIBLE);
+            imgSit.setVisibility(View.VISIBLE);
             float media = calcularMedia();
             String situacao = encontrarSituacao(media);
             alterarCampos(media, situacao);
