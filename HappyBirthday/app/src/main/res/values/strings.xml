@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Happy Birthday</string>
-
-    <!-- Screen -->
-    <string name="happy_brithday">Happy Birthday!</string>
-    <string name="happy_brithday_from">From Pierre.</string>
-</resources>
