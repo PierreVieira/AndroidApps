@@ -1,59 +1,25 @@
 package com.example.wordsapp
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.wordsapp.databinding.ActivityMainBinding
 
-/**
- * Main Activity and entry point for the app. Displays a RecyclerView of letters.
- */
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private var isLinearLayoutManager = true
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupRecyclerView()
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
     }
 
-    private fun setupRecyclerView() {
-        binding.recyclerView.apply {
-            layoutManager = this@MainActivity.getLayoutManager()
-            adapter = LetterAdapter()
-        }
-    }
-
-    private fun getLayoutManager() =
-        if (isLinearLayoutManager) LinearLayoutManager(this) else GridLayoutManager(this, 4)
-
-    private fun setIcon(menuItem: MenuItem?) {
-        menuItem?.let {
-            it.icon = if (isLinearLayoutManager)
-                ContextCompat.getDrawable(this, R.drawable.ic_grid_layout)
-            else ContextCompat.getDrawable(this, R.drawable.ic_linear_layout)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.layout_menu, menu)
-        val layoutButton = menu?.findItem(R.id.action_switch_layout)
-        setIcon(layoutButton)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == R.id.action_switch_layout) {
-            isLinearLayoutManager = !isLinearLayoutManager
-            binding.recyclerView.layoutManager = getLayoutManager()
-            setIcon(item)
-            true
-        } else throw IllegalArgumentException("Not tracked menu option")
-    }
+    override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
 }

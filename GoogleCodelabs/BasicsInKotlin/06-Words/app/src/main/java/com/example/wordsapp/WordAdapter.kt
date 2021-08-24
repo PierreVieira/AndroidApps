@@ -22,7 +22,7 @@ class WordAdapter(letterId: String, context: Context) : ButtonListAdapter(
     }
 
     private fun openBrowser(item: String, context: Context) {
-        val queryUrl = Uri.parse("${DetailActivity.SEARCH_PREFIX}${item}")
+        val queryUrl = Uri.parse("${WordListFragment.SEARCH_PREFIX}${item}")
         val intent = Intent(Intent.ACTION_VIEW, queryUrl)
         context.startActivity(intent)
     }
