@@ -1,4 +1,4 @@
-package com.example.composebasics
+package com.example.composebasics.model
 
 import com.example.composebasics.model.Author
 import com.example.composebasics.model.Message
