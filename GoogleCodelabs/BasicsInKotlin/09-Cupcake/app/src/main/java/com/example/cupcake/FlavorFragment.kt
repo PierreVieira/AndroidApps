@@ -29,12 +29,18 @@ class FlavorFragment : Fragment() {
 
         binding?.apply {
             viewModel = sharedViewModel
-            nextButton.setOnClickListener { goToNextScreen() }
+            lifecycleOwner = viewLifecycleOwner
+            flavorFragment = this@FlavorFragment
         }
     }
 
-    private fun goToNextScreen() {
+    fun goToNextScreen() {
         findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
+    }
+
+    fun cancelOrder() {
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_flavorFragment_to_startFragment)
     }
 
     override fun onDestroyView() {
