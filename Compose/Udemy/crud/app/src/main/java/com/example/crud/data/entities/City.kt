@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "city")
+@Entity(tableName = "cities")
 @Parcelize
 data class City(
     @PrimaryKey(autoGenerate = true)

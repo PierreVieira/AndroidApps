@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun RegisterAppBar(backNavigation: () -> Unit) {
+fun BackAppBar(text: String, backNavigation: () -> Unit) {
     TopAppBar(
-        title = { Text(text = "Registrar") },
+        title = { Text(text = text) },
         navigationIcon = {
             IconButton(onClick = { backNavigation() }) {
                 Icon(Icons.Default.ArrowBack, contentDescription = "Back to previous screen")
@@ -24,5 +24,5 @@ fun RegisterAppBar(backNavigation: () -> Unit) {
 @Preview
 @Composable
 fun AppBarPreview() {
-    RegisterAppBar { }
+    BackAppBar("Registrar") { }
 }

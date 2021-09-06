@@ -19,6 +19,9 @@ interface CityDao {
     @Delete
     suspend fun delete(city: City)
 
-    @Query("SELECT * FROM city")
+    @Query("SELECT * FROM cities")
     fun getAllCities(): Flow<List<City>>
+
+    @Query("SELECT * FROM cities WHERE id == :cityId")
+    suspend fun getCityById(cityId: Int): City?
 }

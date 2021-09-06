@@ -1,4 +1,4 @@
-package com.example.crud.ui.screens.register.components
+package com.example.crud.ui.screens.crud.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
@@ -8,11 +8,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun RegisterButton(registerAction: () -> Unit) {
+fun AppButton(text: String, onClick: () -> Unit) {
     Button(
         modifier = Modifier.padding(top = 16.dp),
-        onClick = registerAction
+        onClick = onClick
     ) {
-        Text(text = "CADASTRAR")
+        Text(text = text)
     }
 }

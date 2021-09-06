@@ -17,4 +17,6 @@ class CityRepository @Inject constructor(appDatabase: AppDatabase) {
 
     suspend fun deleteCity(city: City) = dao.delete(city)
 
+    suspend fun getCityById(id: Int) = dao.getCityById(id)
+
 }

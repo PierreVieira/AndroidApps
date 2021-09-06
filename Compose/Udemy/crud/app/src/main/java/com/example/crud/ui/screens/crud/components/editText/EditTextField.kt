@@ -1,4 +1,4 @@
-package com.example.crud.ui.screens.register.components
+package com.example.crud.ui.screens.crud.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -14,13 +15,15 @@ fun EditTextField(
     labelText: String,
     value: String,
     keyboardType: KeyboardType = KeyboardType.Text,
-    onValueChanged: (String) -> Unit
+    onValueChanged: (String) -> Unit,
+    visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
     OutlinedTextField(
         modifier = Modifier.padding(top = 8.dp),
         label = { Text(text = labelText) },
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
         value = value,
-        onValueChange = onValueChanged
+        onValueChange = onValueChanged,
+        visualTransformation = visualTransformation
     )
 }
