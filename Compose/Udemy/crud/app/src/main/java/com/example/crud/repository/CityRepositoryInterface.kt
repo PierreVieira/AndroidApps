@@ -1,4 +1,4 @@
-package com.example.crud.repositories.city
+package com.example.crud.repository
 
 import com.example.crud.data.entities.City
 
