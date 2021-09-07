@@ -6,8 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 abstract class CrudViewModel : ViewModel() {
+
     protected val _status: MutableLiveData<Boolean> = MutableLiveData()
     val status: LiveData<Boolean> = _status
+
     private val _cityName = mutableStateOf("")
     var cityName: String
         get() = _cityName.value

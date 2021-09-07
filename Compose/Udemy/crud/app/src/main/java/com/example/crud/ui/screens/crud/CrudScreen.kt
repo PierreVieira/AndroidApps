@@ -7,12 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.crud.ui.screens.crud.components.EditTextField
+import com.example.crud.ui.screens.crud.components.BackAppBar
 import com.example.crud.ui.screens.crud.components.editText.cep.CepEditText
-import com.example.crud.ui.screens.register.components.BackAppBar
-
-private const val NAME_PLACEHOLDER = "Nome"
-private const val UF_PLACEHOLDER = "UF"
+import com.example.crud.ui.screens.crud.components.editText.name.NameEditText
+import com.example.crud.ui.screens.crud.components.editText.uf.UfEditText
 
 @Composable
 fun CrudScreen(
@@ -36,17 +34,10 @@ private fun ContentScreen(viewModel: CrudViewModel, buttons: @Composable () -> U
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        EditTextField(
-            labelText = NAME_PLACEHOLDER,
-            value = viewModel.cityName,
-            onValueChanged = { viewModel.cityName = it }
-        )
+        NameEditText(viewModel)
         CepEditText(viewModel)
-        EditTextField(
-            labelText = UF_PLACEHOLDER,
-            value = viewModel.cityUf,
-            onValueChanged = { viewModel.cityUf = it }
-        )
+        UfEditText(viewModel)
         buttons()
     }
 }
+

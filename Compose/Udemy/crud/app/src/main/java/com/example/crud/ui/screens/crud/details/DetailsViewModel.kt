@@ -1,8 +1,8 @@
-package com.example.crud.ui.screens.details
+package com.example.crud.ui.screens.crud.details
 
 import androidx.lifecycle.viewModelScope
 import com.example.crud.data.entities.City
-import com.example.crud.repositories.CityRepository
+import com.example.crud.repositories.city.CityRepository
 import com.example.crud.ui.screens.crud.CrudViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

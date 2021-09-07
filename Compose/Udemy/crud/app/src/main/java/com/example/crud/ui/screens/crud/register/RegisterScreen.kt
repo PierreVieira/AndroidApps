@@ -1,4 +1,4 @@
-package com.example.crud.ui.screens.register
+package com.example.crud.ui.screens.crud.register
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel

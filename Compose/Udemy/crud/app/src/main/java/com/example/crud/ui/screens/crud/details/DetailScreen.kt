@@ -1,4 +1,4 @@
-package com.example.crud.ui.screens.details
+package com.example.crud.ui.screens.crud.details
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer

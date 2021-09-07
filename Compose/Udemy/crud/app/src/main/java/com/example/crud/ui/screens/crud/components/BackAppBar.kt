@@ -1,4 +1,4 @@
-package com.example.crud.ui.screens.register.components
+package com.example.crud.ui.screens.crud.components
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -13,12 +13,15 @@ import androidx.compose.ui.tooling.preview.Preview
 fun BackAppBar(text: String, backNavigation: () -> Unit) {
     TopAppBar(
         title = { Text(text = text) },
-        navigationIcon = {
-            IconButton(onClick = { backNavigation() }) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Back to previous screen")
-            }
-        }
+        navigationIcon = { BackArrowIcon(backNavigation) }
     )
+}
+
+@Composable
+private fun BackArrowIcon(backNavigation: () -> Unit) {
+    IconButton(onClick = { backNavigation() }) {
+        Icon(Icons.Default.ArrowBack, contentDescription = "Back to previous screen")
+    }
 }
 
 @Preview

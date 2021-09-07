@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.crud.data.entities.City
-import com.example.crud.repositories.CityRepository
+import com.example.crud.repositories.city.CityRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
