@@ -1,4 +1,4 @@
-package com.example.crud.ui.navigation
+package com.example.crud.navigation
 
 object Routes {
     private const val DETAILS_BASE_ROUTE = "details/"

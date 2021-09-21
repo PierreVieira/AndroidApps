@@ -1,4 +1,4 @@
-package com.example.crud.ui.navigation
+package com.example.crud.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -7,7 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
+import androidx.navigation.navArgument
 import com.example.crud.ui.screens.crud.details.DetailScreen
 import com.example.crud.ui.screens.crud.register.RegisterScreen
 import com.example.crud.ui.screens.home.HomeScreen
