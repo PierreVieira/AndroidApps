@@ -1,11 +1,15 @@
 package com.example.crud.navigation
 
-object Routes {
-    private const val DETAILS_BASE_ROUTE = "details/"
-    const val HOME = "home"
-    const val REGISTER = "register"
-    const val CITY_ID_KEY = "cityId"
-    const val DETAILS = "$DETAILS_BASE_ROUTE{$CITY_ID_KEY}"
+sealed class Routes(val value: String) {
 
-    fun getDetailsDynamicRoute(cityId: Int) = "$DETAILS_BASE_ROUTE${cityId}"
+    companion object {
+        private const val DETAILS_BASE_ROUTE = "details/"
+        const val CITY_ID = "cityId"
+    }
+
+    object Home: Routes("home")
+    object Register: Routes("register")
+    object Details: Routes("$DETAILS_BASE_ROUTE{$CITY_ID}") {
+        fun getDynamicRoute(cityId: Int) = "$DETAILS_BASE_ROUTE$cityId"
+    }
 }

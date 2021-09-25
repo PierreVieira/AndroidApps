@@ -1,32 +1,21 @@
-package com.example.profilecard
+package com.example.profilecard.ui.screens.home.components
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
@@ -37,60 +26,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
-import com.example.profilecard.ui.theme.MyTheme
+import com.example.profilecard.R
+import com.example.profilecard.model.User
 import com.example.profilecard.ui.theme.lightGreen
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MyTheme {
-                MainScreen()
-            }
-        }
-    }
-}
-
 @Composable
-fun MainScreen(originalUserList: List<User> = userList) {
-    val users = originalUserList.toMutableList()
-    users.sortByDescending { it.online }
-    Scaffold(
-        topBar = { AppBar() }
-    ) {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-        ) {
-            LazyColumn {
-                items(users) {
-                    ProfileCard(user = it)
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun AppBar() {
-    TopAppBar(
-        navigationIcon = {
-            Icon(
-                modifier = Modifier.padding(start = 12.dp),
-                imageVector = Icons.Default.Home,
-                contentDescription = null
-            )
-        },
-        title = { Text(text = "Messaging Application Users") }
-    )
-}
-
-@Composable
-fun ProfileCard(user: User) {
+fun ProfileCard(user: User, openDetailsAction: (User) -> Unit) {
     Card(
         modifier = Modifier
             .padding(top = 8.dp, bottom = 4.dp, start = 16.dp, end = 16.dp)
             .fillMaxWidth()
-            .wrapContentHeight(align = Alignment.Top),
+            .wrapContentHeight(align = Alignment.Top)
+            .clickable {
+                openDetailsAction(user)
+            },
         elevation = 8.dp,
         backgroundColor = Color.White
     ) {
@@ -106,7 +55,7 @@ fun ProfileCard(user: User) {
 }
 
 @Composable
-fun ProfilePicture(imageUrl: String, online: Boolean) {
+private fun ProfilePicture(imageUrl: String, online: Boolean) {
     Card(
         modifier = Modifier.padding(16.dp),
         shape = CircleShape,
@@ -133,7 +82,7 @@ fun ProfilePicture(imageUrl: String, online: Boolean) {
 }
 
 @Composable
-fun ProfileInfo(name: String, online: Boolean) {
+private fun ProfileInfo(name: String, online: Boolean) {
     Column(
         modifier = Modifier
             .padding(8.dp)
@@ -154,10 +103,16 @@ fun ProfileInfo(name: String, online: Boolean) {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    MyTheme {
-        MainScreen()
-    }
+@Preview
+private fun ProfileCardPreview() {
+    ProfileCard(
+        user = User(
+            id = "android-18",
+            name = "Android 18",
+            imageUrl = "https://pm1.narvii.com/5943/b5ae3a69a0e08513ce9d1fe2a8cee85f6082c4fc_hq.jpg",
+            online = true
+        ),
+        openDetailsAction = {}
+    )
 }
