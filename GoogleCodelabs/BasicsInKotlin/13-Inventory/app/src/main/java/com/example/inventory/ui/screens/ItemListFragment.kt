@@ -1,4 +1,4 @@
-package com.example.inventory.ui.fragments
+package com.example.inventory.ui.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inventory.InventoryApplication
 import com.example.inventory.R
 import com.example.inventory.databinding.ItemListFragmentBinding
-import com.example.inventory.ui.adapters.itemList.ItemListAdapter
+import com.example.inventory.ui.screens.addItem.adapter.ItemListAdapter
 import com.example.inventory.ui.inventoryViewModel.InventoryViewModel
 import com.example.inventory.ui.inventoryViewModel.InventoryViewModelFactory
 
@@ -43,7 +43,9 @@ class ItemListFragment : Fragment() {
     private fun setupRecycler() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         val adapter = ItemListAdapter {
-
+            val action =
+                ItemListFragmentDirections.actionItemListFragmentToItemDetailFragment(it.id)
+            this.findNavController().navigate(action)
         }
         binding.recyclerView.adapter = adapter
         setupObserver(adapter)

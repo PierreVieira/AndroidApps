@@ -1,4 +1,4 @@
-package com.example.inventory.ui.adapters.itemList
+package com.example.inventory.ui.screens.addItem.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

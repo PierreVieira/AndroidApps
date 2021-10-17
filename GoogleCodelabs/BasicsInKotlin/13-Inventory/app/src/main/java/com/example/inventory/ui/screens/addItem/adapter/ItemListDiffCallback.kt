@@ -1,4 +1,4 @@
-package com.example.inventory.ui.adapters.itemList
+package com.example.inventory.ui.screens.addItem.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.inventory.data.Item

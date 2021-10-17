@@ -20,7 +20,7 @@ interface ItemDao {
     suspend fun delete(item: Item)
 
     @Query("SELECT * FROM item WHERE id = :id")
-    fun getItemById(id: Int): Flow<Item> // Funções que retornam Flow não precisam ser suspensas pois são executadas em segundo plano (não precisa executar em corrotina)
+    fun getItem(id: Int): Flow<Item> // Funções que retornam Flow não precisam ser suspensas pois são executadas em segundo plano (não precisa executar em corrotina)
 
     @Query("SELECT * FROM item ORDER BY name")
     fun getItems(): Flow<List<Item>>
