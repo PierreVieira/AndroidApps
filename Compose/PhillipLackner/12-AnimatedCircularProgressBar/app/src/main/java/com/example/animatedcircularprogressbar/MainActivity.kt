@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -76,7 +77,7 @@ fun CircularProgressBar(
             drawArc(
                 color = color,
                 startAngle = -90f,
-                sweepAngle = 350 * curPercentage.value,
+                sweepAngle = 360 * curPercentage.value,
                 useCenter = false,
                 style = Stroke(
                     width = strokeWidth.toPx(),
@@ -91,4 +92,10 @@ fun CircularProgressBar(
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+@Preview(showBackground = true)
+private fun CircularProgressBarPreview() {
+    CircularProgressBar(percentage = 0.7f, number = 30)
 }
