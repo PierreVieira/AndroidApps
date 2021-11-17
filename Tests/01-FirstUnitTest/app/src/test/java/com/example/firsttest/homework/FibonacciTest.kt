@@ -1,6 +1,5 @@
 package com.example.firsttest.homework
 
-import com.example.firsttest.homework.Fibonacci
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
