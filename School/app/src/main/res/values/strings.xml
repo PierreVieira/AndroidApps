@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">School</string>
+    <string name="add_student">Add student</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="students">Students</string>
+    <string name="note_1">Note 1</string>
+    <string name="note_2">Note 2</string>
+    <string name="note_3">Note 3</string>
+    <string name="registration">Registration</string>
+    <string name="exit_app">Exit app</string>
+    <string name="student_details">Student details</string>
+    <string name="edit_student">Edit student</string>
+    <string name="name">Name</string>
+    <string name="invalid_name">Name field is invalid! Make sure you only enter letters of the alphabet.</string>
+    <string name="invalid_registration">The registration field is invalid make sure you have entered only digits and dots.</string>
+    <string name="invalid_note1">The first note field is invalid. Make sure you have entered a number between 0 and 10.</string>
+    <string name="invalid_note2">The second note field is invalid. Make sure you have entered a number between 0 and 10.</string>
+    <string name="invalid_note3">The third note field is invalid. Make sure you have entered a number between 0 and 10.</string>
+    <string name="invalid_name_blank">The name field is empty</string>
+    <string name="invalid_registration_blank">The registration field is empty</string>
+    <string name="invalid_note1_blank">The first note field is empty.</string>
+    <string name="invalid_note2_blank">The second note field is empty.</string>
+    <string name="invalid_note3_blank">The third note field is empty.</string>
+    <string name="empty_list_message">Your student list is empty. Click on the button below to add a new student to the list.</string>
+</resources>

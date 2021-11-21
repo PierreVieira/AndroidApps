@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.school.features.students.presentation.screens.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_studentsListFragment"
+            app:destination="@id/studentsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsListFragment"
+        android:name="com.example.school.features.students.presentation.screens.student.studentList.StudentsListFragment"
+        android:label="@string/students"
+        tools:layout="@layout/students_list_fragment" >
+        <action
+            android:id="@+id/action_studentsListFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment" />
+        <action
+            android:id="@+id/action_studentsListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.example.school.features.students.presentation.screens.student.editStudent.EditStudentFragment"
+        android:label="@string/student_details"
+        tools:layout="@layout/fragment_edit_student">
+        <action
+            android:id="@+id/action_editStudentFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_editStudentFragment_to_studentsListFragment"
+            app:destination="@id/studentsListFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Escola</string>
+    <string name="add_student">Adicionar estudante</string>
+    <string name="students">Estudantes</string>
+    <string name="note_1">Nota 1</string>
+    <string name="note_2">Nota 2</string>
+    <string name="note_3">Nota 3</string>
+    <string name="registration">Matrícula</string>
+    <string name="exit_app">Sair do app</string>
+    <string name="student_details">Detalhes do estudante</string>
+    <string name="edit_student">Editar estudante</string>
+    <string name="name">Nome</string>
+    <string name="invalid_name">O campo de nome está inválido! Certifique-se de ter informado apenas letras do alfabeto.</string>
+    <string name="invalid_registration">O campo de matrícula está inválido certifique-se de ter digitado apenas dígitos e pontos.</string>
+    <string name="invalid_note1">O primeiro campo de nota é inválido. Certifique-se de inserir um número entre 0 e 10.</string>
+    <string name="invalid_note2">O segundo campo de nota é inválido. Certifique-se de inserir um número entre 0 e 10.</string>
+    <string name="invalid_note3">O terceiro campo de nota é inválido. Certifique-se de inserir um número entre 0 e 10.</string>
+    <string name="invalid_name_blank">O campo de nome está vazio</string>
+    <string name="invalid_registration_blank">O campo de matrícula está vazio</string>
+    <string name="invalid_note1_blank">O campo de primeira nota está vazio.</string>
+    <string name="invalid_note2_blank">O campo de segunda nota está vazio.</string>
+    <string name="invalid_note3_blank">O campo de terceira nota está vazio.</string>
+    <string name="empty_list_message">Sua lista de estudantes está vazia. Clique no botão abaixo para adicionar um novo aluno à lista.</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="student_list_item_card_height">56dp</dimen>
+    <dimen name="edit_note_width">104dp</dimen>
+    <dimen name="editNotesMarginTop">16dp</dimen>
+    <dimen name="loading_size">56dp</dimen>
+</resources>
