@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2018 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 @file:JvmName("WorkerUtils")
 
 package com.example.background.workers
@@ -95,7 +79,7 @@ fun sleep() {
     try {
         Thread.sleep(DELAY_TIME_MILLIS, 0)
     } catch (e: InterruptedException) {
-        Log.e(TAG, e.message)
+        Log.e(TAG, e.message.toString())
     }
 
 }
@@ -112,8 +96,7 @@ fun blurBitmap(bitmap: Bitmap, applicationContext: Context): Bitmap {
     try {
 
         // Create the output bitmap
-        val output = Bitmap.createBitmap(
-                bitmap.width, bitmap.height, bitmap.config)
+        val output = Bitmap.createBitmap(bitmap.width, bitmap.height, bitmap.config)
 
         // Blur the image
         rsContext = RenderScript.create(applicationContext, RenderScript.ContextType.DEBUG)
