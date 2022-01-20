@@ -1,4 +1,7 @@
-package com.example.waterme.adapater
+package com.example.waterme.adapter
 
-interface PlantListener {
+import com.example.waterme.model.Plant
+
+class PlantListener(val longClickListener: (plant: Plant) -> Boolean) {
+    fun onLongClick(plant: Plant) = longClickListener(plant)
 }
